@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>The PetTechs</title>
+</head>
+<body>
+    <header>
+        <div class="header bg-dark">
+            <nav>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#home" class="nav-link active rounded-0 text-light" data-toggle="tab">Home</a></li>
+                    <li class="nav-item"><a href="#clientes" class="nav-link rounded-0 text-light" data-toggle="tab">Clientes</a></li>
+                    <li class="nav-item"><a href="#pets" class="nav-link rounded-0 text-light" data-toggle="tab">Pets</a></li>
+                    <li class="nav-item"><a href="#consultas" class="nav-link rounded-0 text-light" data-toggle="tab">Consultas</a></li>
+                    <li class="nav-item"><a href="#estoque" class="nav-link rounded-0 text-light" data-toggle="tab">Estoque</a></li>
+                    <li class="nav-item"><a href="#vendas" class="nav-link rounded-0 text-light" data-toggle="tab">Vendas</a></li>
+                </ul>
+                <div class="toggler"></div>
+            </nav>
+        </div>
+    </header>
+
+    <aside>
+        <nav class="d-flex flex-column bg-dark" id="nav">
+            <ul class="nav nav-pills">
+                <li>
+                    <a href="cadastros/client.html" class="nav-link">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Cadastrar Cliente</span>
+                    </a>
+                </li>  
+                <li title="Profile">
+                    <a href="cadastros/pet.html" class="nav-link">
+                        <i class="fas fa-dog"></i>
+                        <span>Cadastrar Pet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastros/product.html" class="nav-link">
+                        <i class="fas fa-bone"></i>
+                        <span>Cadastrar Produto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastros/consult.html" class="nav-link">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Consulta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastros/sale.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Caixa Rapido</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="exitLogin()" href="index.html" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div class="main-container p-5 d-flex flex-column justify-content-between align-items-center text-light">
+        
+            <div class="tab-content container">
+                <div id="home" class="tab-pane active">
+                    <div class="home-content d-flex aligm-items-center justify-content-around flex-column text-center">
+                        <h1>Bem-Vindo ao</h1>
+                        <div class="img-logo">
+                            <img src="assets/logo-novo3.png">
+                        </div>
+                        <p>O melhor software de gerenciamento para petshops</p>
+                    </div>
+                </div>
+                <div id="clientes" class="tab-pane fade">
+                    <h1 class="text-center">Clientes</h1>
+                    <div class="container d-flex align-items-center justify-content-around flex-column">
+                        <div class="search d-flex align-items-center">
+                            <select id="selectClient">
+                                <option value="nome">Nome</option>
+                                <option value="email">Email</option>
+                                <option value="endereco">Endereço</option>
+                                <option value="telefone">Telefone</option>
+                            </select>
+                            <input type="text" class="p-1" id="inputSearchClient">
+                            <input type="button" value="Pesquisar" class="btn btn-sm btn-success" onclick="searchClient()">
+                        </div>
+                        <table class="table table-hover table-striped table-dark mt-3" id="tableClient">
+                            <thead class="bg-primary">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Endereço</th>
+                                    <th>Telefone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="pets" class="tab-pane fade">
+                    <h1 class="text-center">Pets</h1>
+                    <div class="container d-flex align-items-center justify-content-around flex-column">
+                        <div class="search d-flex align-items-center">
+                            <select id="selectPet">
+                                <option value="nomePet">Nome</option>
+                                <option value="animal">Animal</option>
+                                <option value="dono">Dono</option>
+                            </select>
+                            <input type="text" class="p-1" id="inputSearchPet">
+                            <input type="button" value="Pesquisar" class="btn btn-sm btn-success" onclick="searchPet()">
+                        </div>
+                        <table class="table table-hover table-striped table-dark mt-3" id="tablePet">
+                            <thead class="bg-primary text-light">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Animal</th>
+                                    <th>Dono</th>
+                                    <th>Raça</th>
+                                    <th>Sexo</th>
+                                    <th>Vascinado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div id="consultas" class="tab-pane fade">
+                    <h1 class="text-center">Consultas</h1>
+                    <div class="container d-flex aligm-items-center justify-content-around flex-column">
+                        <div class="search d-flex align-items-center">
+                            <select id="selectConsult">
+                                <option value="dono">Dono</option>
+                                <option value="pet">Pet</option>
+                                <option value="data">Data</option>
+                            </select>
+                            <input type="text" class="p-1" id="inputSearchConsult">
+                            <input type="button" value="Pesquisar" class="btn btn-sm btn-success" onclick="searchConsult()">
+                        </div>
+                        <table class="table table-hover table-striped table-dark mt-3" id="tableConsult">
+                            <thead class="bg-primary text-light">
+                                <tr>
+                                    <th>Dono</th>
+                                    <th>Pet</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Banho</th>
+                                    <th>Tosa</th>
+                                    <th>Hidratação</th>
+                                    <th>Unha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div id="estoque" class="tab-pane fade">
+                    <h1 class="text-center">Produtos</h1>
+                    <div class="container d-flex align-items-center justify-content-around flex-column">
+                        <div class="search d-flex align-items-center">
+                            <select id="selectProduct">
+                                <option value="descricao">Descrição</option>
+                                <option value="marca">Marca</option>
+                                <option value="categoria">Categoria</option>
+                            </select>
+                            <input type="text" class="p-1" id="inputSearchProduct">
+                            <input type="button" value="Pesquisar" class="btn btn-sm btn-success" onclick="searchProduct()">
+                        </div>
+                        <table class="table table-hover table-striped table-dark mt-3" id="tableProduct">
+                            <thead class="bg-primary text-light">
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Marca</th>
+                                    <th>Preço</th>
+                                    <th>Categoria</th>
+                                    <th>Unidades</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="vendas" class="tab-pane fade">
+                    <h1 class="text-center">Vendas</h1>
+                    <div class="container d-flex align-items-center justify-content-around flex-column">
+                        <div class="search d-flex align-items-center">
+                            <select id="selectSale">
+                                <option value="data">Data</option>
+                                <option value="hora">Hora</option>
+                            </select>
+                            <input type="text" class="p-1" id="inputSearchSale">
+                            <input type="button" value="Pesquisar" class="btn btn-sm btn-success" onclick="searchSale()">
+                    </div>
+                    <table class="table table-hover table-striped table-dark mt-3" id="tableSale">
+                        <thead class="bg-primary text-light">
+                            <tr>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Items</th>
+                                <th>Valor</th>
+                                <th>Recebido</th>
+                                <th>Troco</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+    
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+    <script>
+        let nav = document.getElementById('nav')
+        let toggler = document.querySelector('.toggler')
+        let main = document.querySelector('.main-container')
+        toggler.onclick = ()=>{
+            nav.classList.toggle('active')
+            main.classList.toggle('active') 
+            toggler.classList.toggle('active')    
+        }
+    </script>
+
+    <script src="js/model.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

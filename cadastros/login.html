@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>sign In - PetTechs</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            height: 90vh;
+        }
+        input{
+            max-width: 50%;
+        }
+        .submit{
+            width: 54%;
+        }
+
+        .title{
+            font-family: cursive;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+
+        li i{
+            font-size: 20px;
+            margin: 0 10px;
+            color: green;
+            transition: .3s;
+            cursor: pointer;
+    
+        }
+
+        li i:hover{
+            color: white;
+        }
+
+        .loaded{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: black;
+            top: 0;
+            left: 0;
+            opacity: .9;
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <header>
+        <ul class="d-flex justify-content-end align-items-center mr-4 mt-2">
+            <li><i class="fab fa-facebook-square"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-whatsapp"></i></li>
+        </ul>
+    </header>
+    <main>
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <div class="title">
+                <h1 class="display-3 mb-5 text-light">The PetTechs</h1>
+            </div>
+
+            <div class="input-group mb-3 d-flex justify-content-center">
+                <div class="input-group-prepend">   
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="Email" id="email">
+            </div>
+
+            <div class="input-group mb-3 d-flex justify-content-center">
+                <div class="input-group-prepend">   
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password" id="password">
+            </div>
+
+            <div class="submit d-flex justify-content-start ">
+                <button class="btn btn-success font-weight-bold" onclick="registerNewUser()">Cadastrar</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="loaded align-items-center justify-content-center">
+        <div class="spinner-border text-light" role="status">
+        </div>
+    </div>
+      
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+    <script src="../js/model.js"></script>
+    <script src="../js/script.js"></script>
+  
+</body>
+</html>
